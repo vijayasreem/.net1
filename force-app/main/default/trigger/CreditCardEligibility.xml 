@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trigger xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <isActive>true</isActive>
+    <description>Eligibility for Credit Card</description>
+    <triggerName>CreditCardEligibility</triggerName>
+    <type>AfterUpdate, AfterInsert</type>
+    <body>Set&lt;Decimal&gt; annualIncome = new Set&lt;Decimal&gt;();
+    Set&lt;Decimal&gt; creditScore = new Set&lt;Decimal&gt;();
+    List&lt;Application__c&gt; newApplications = new List&lt;Application__c&gt;();
+    
+    for (Application__c app : Trigger.new) {
+        annualIncome.add(app.Annual_Income__c);
+        creditScore.add(app.Credit_Score__c);
+        newApplications.add(app);
+    }
+    
+    if (annualIncome.contains(30000) &amp;&amp; creditScore.contains(700)) {
+        for (Application__c app : newApplications) {
+            app.Eligibility_Determination_Message__c = 'Congratulations! You are eligible for a credit card with a high limit.';
+        }
+    }
+    else if (annualIncome.contains(20000) &amp;&amp; creditScore.contains(600)) {
+        for (Application__c app : newApplications) {
+            app.Eligibility_Determination_Message__c = 'You are eligible for a credit card with a moderate limit.';
+        }
+    }
+    else {
+        for (Application__c app : newApplications) {
+            app.Eligibility_Determination_Message__c = 'Sorry, you are not eligible for a credit card at this time.';
+        }
+    }
+    
+    if(!newApplications.isEmpty()) {
+        update newApplications;
+    }</body>
+</Trigger>
