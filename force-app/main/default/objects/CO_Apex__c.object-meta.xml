@@ -1,0 +1,34 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LoanApplication__c</fullName>
+    <nameField>
+        <label>Loan Application Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Loan Applications</pluralLabel>
+    <fields>
+        <fullName>identification__c</fullName>
+        <label>Identification</label>
+        <type>Text</type>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>proofOfIncome__c</fullName>
+        <label>Proof of Income</label>
+        <type>Number</type>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>creditHistory__c</fullName>
+        <label>Credit History</label>
+        <type>Text</type>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>employmentDetails__c</fullName>
+        <label>Employment Details</label>
+        <type>Text</type>
+        <required>true</required>
+    </fields>
+</CustomObject>

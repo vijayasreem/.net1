@@ -1,0 +1,23 @@
+<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>44.0</apiVersion>
+    <status>Active</status>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>loanApp</namespace>
+    </packageVersions>
+    <fullName>LoanApplicationController</fullName>
+    <description>Apex class for managing car loan application process</description>
+    <accessModifiers>public</accessModifiers>
+    <isTest>false</isTest>
+    <isController>true</isController>
+    <isInPackage>true</isInPackage>
+    <testMethods>
+        <name>testSubmitApplication</name>
+        <isParallel>false</isParallel>
+    </testMethods>
+    <testMethods>
+        <name>testAcceptLoanOffer</name>
+        <isParallel>false</isParallel>
+    </testMethods>
+</ApexClass>
